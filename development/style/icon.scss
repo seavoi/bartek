@@ -1,0 +1,26 @@
+.icon-wrapper {
+	align-items: center;
+	display: flex;
+	height: 200px;
+	justify-content: center;
+	margin: 0 auto 30px auto;
+	max-width: 100%;
+	&.circular {
+		background-color: $brand-green-light;
+		background-position: center;
+		background-size: cover;
+		border-radius: 100%;
+		max-width: 200px;
+	}
+	.icon {
+		max-height: 100%;
+	}
+}
+
+.icon-row {
+	.title {
+		color: $brand-green-light;
+		font-weight: bold;
+		margin: 0 0 10px 0;
+	}
+}

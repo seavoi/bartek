@@ -1,0 +1,48 @@
+section {
+	position: relative;
+}
+
+.section-id {
+	position: absolute;
+	top: -92px;
+	@media (min-width: $medium) {
+		top: -136px;
+	}
+}
+
+.container {
+	max-width: 1500px;
+	padding: 50px 20px;
+	@media (min-width: $medium) {
+		padding: 60px 30px;
+	}
+	@media (min-width: $extra-large) {
+		padding: 70px 40px;
+	}
+	.container {
+		padding: 0;
+	}
+}
+
+.row {
+	padding-bottom: 20px;
+	@media (min-width: $medium) {
+		padding-bottom: 20px;
+	}
+	@media (min-width: $extra-large) {
+		padding-bottom: 30px;
+	}
+	&:last-of-type {
+		padding-bottom: 0;
+	}
+}
+
+.blocks, .text {
+	margin-bottom: 50px;
+	@media (min-width: $medium) {
+		margin-bottom: 60px;
+	}
+	@media (min-width: $extra-large) {
+		margin-bottom: 70px;
+	}
+}
