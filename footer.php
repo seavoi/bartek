@@ -47,18 +47,14 @@
 				</ul>
 			</ul>
 		</div>
-		<div class="col-xs-12">
+		<div class="col-xs-12" style="display: none;">
 			<ul class="footer-middle-wrapper">
 				<li class=""></li>
 				<ul class="right newsletter-wrapper">
 					<li>
 						<h2 class="footer-title">Newsletter</h2>
 						<p>Subscribe to our newsletter for updates and insightful content.</p>
-						<?php if ($_SERVER['SERVER_NAME'] == "bartek.local") {
-							echo do_shortcode('[wpforms id="181"]');
-						} else {
-							echo do_shortcode('[wpforms id="133"]');
-						} ?>
+						
 					</li>
 				</ul>
 			</ul>
