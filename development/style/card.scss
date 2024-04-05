@@ -44,3 +44,18 @@
 		width: 100%;
 	}
 }
+
+.card-row {
+	.col-xs-12 {
+		padding-bottom: 20px;
+		@media (min-width: $medium) {
+			padding-bottom: 0;
+		}
+		&:last-of-type {
+			padding-bottom: 0;
+			@media (min-width: $medium) {
+				padding-bottom: 0;
+			}
+		}
+	}
+}
