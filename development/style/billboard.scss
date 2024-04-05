@@ -19,12 +19,12 @@
 					color: $brand-green-light;
 				}
 			}
-			p {
+			p, ul, li {
 				color: white;
-				font-size: 1.25em;
 				margin-bottom: 0;
 				@media (min-width: $medium) {
 					color: $copy;
+					font-size: 1.25em;
 				}
 			}
 			p ~ a.button {
@@ -98,7 +98,7 @@
 #scroll {
 	background-color: transparent;
 	height: 116px;
-	margin-top: -112px;
+	margin-top: -116px;
 	width: 100%;
 	z-index: 0;
 }

@@ -6,6 +6,50 @@
   <?php get_template_part('components/navigation'); ?>
 </header>
 <main class="home">
+  <?php if(have_rows('billboard_carousel')): ?>
+    <?php while(have_rows('billboard_carousel')): the_row(); 
+      $billboard_carousel_background_image = get_sub_field('billboard_carousel_background_image');
+      $billboard_carousel_headline = get_sub_field('billboard_carousel_headline');
+      $billboard_carousel_paragraph = get_sub_field('billboard_carousel_paragraph'); ?>
+    <div id="home-hero-mobile" class="billboard-wrapper">
+      <div class="billboard-content-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 billboard-content">
+              <h1><?php echo $billboard_carousel_headline; ?></h1>
+              <div class="wysiwyg-wrapper">
+                <?php echo $billboard_carousel_paragraph; ?>
+                <div class="clear"></div>
+              </div>
+              <?php $billboard_button = get_sub_field('billboard_carousel_button'); if($billboard_button): ?>
+                <div class="button-row">
+                <?php if($billboard_button): 
+                  $button_target = $billboard_button['target'] ? $billboard_button['target'] : '_self'; 
+                  $button_title = $billboard_button['title']; 
+                  $button_url = $billboard_button['url'];?>
+                  <a 
+                    class="button button-secondary" 
+                    href="<?php echo esc_url( $button_url ); ?>" 
+                    style="border-color: white;"
+                    target="<?php echo esc_attr( $button_target ); ?>">
+                    <?php echo esc_html( $button_title ); ?>
+                  </a>
+                <?php endif; ?>
+              </div>
+              <?php endif; ?>
+            </div>
+            <div class="col-md-6">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="billboard-background-wrapper">
+        <div class="billboard-background"></div>
+        <div class="billboard-background" style="background-image: url('<?php echo $billboard_carousel_background_image; ?>')"></div>
+      </div>
+    </div>
+    <?php endwhile; ?>
+  <?php endif; ?>
   <?php if(have_rows('billboard_carousel')): $counter = 0; ?>
   <div id="home-hero" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -31,8 +75,7 @@
   <?php if(have_rows('billboard_carousel')): $counter = 0; ?>
     <div class="carousel-inner">
     <?php while(have_rows('billboard_carousel')): the_row(); 
-      $billboard_carousel_background_image_desktop = get_sub_field('billboard_carousel_background_image_desktop');
-      $billboard_carousel_background_image_mobile = get_sub_field('billboard_carousel_background_image_mobile');
+      $billboard_carousel_background_image = get_sub_field('billboard_carousel_background_image');
       $billboard_carousel_headline = get_sub_field('billboard_carousel_headline');
       $billboard_carousel_paragraph = get_sub_field('billboard_carousel_paragraph'); ?>
       <div 
@@ -43,9 +86,12 @@
         <?php endif; ?>
         data-bs-interval="8000">
         <div class="d-block w-100">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption">
             <h1 class="carousel-headline"><?php echo $billboard_carousel_headline; ?></h1>
-            <p class="caraousel-paragraph"><?php echo $billboard_carousel_paragraph; ?></p>
+            <div class="wysiwyg-wrapper">
+              <?php echo $billboard_carousel_paragraph; ?>
+              <div class="clear"></div>
+            </div>
             <?php $billboard_button = get_sub_field('billboard_carousel_button'); if($billboard_button): ?>
               <div class="button-row">
               <?php if($billboard_button): 
@@ -53,8 +99,9 @@
                 $button_title = $billboard_button['title']; 
                 $button_url = $billboard_button['url'];?>
                 <a 
-                  class="button button-primary" 
+                  class="button button-secondary" 
                   href="<?php echo esc_url( $button_url ); ?>" 
+                  style="border-color: white;"
                   target="<?php echo esc_attr( $button_target ); ?>">
                   <?php echo esc_html( $button_title ); ?>
                 </a>
@@ -62,17 +109,17 @@
             </div>
             <?php endif; ?>
           </div>
-          <div class="carousel-mobile" style="background-image: url('<?php echo $billboard_carousel_background_image_mobile; ?>');"></div>
-          <div class="carousel-desktop" style="background-image: url('<?php echo $billboard_carousel_background_image_desktop; ?>');"></div>
+          <div class="carousel-blocker"></div>
+          <div class="carousel-desktop" style="background-image: url('<?php echo $billboard_carousel_background_image; ?>');"></div>
         </div>
       </div>
     <?php $counter = $counter + 1; endwhile; ?>
     </div>
-    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#home-hero" type="button">
+    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#home-hero" type="button" style="opacity: 0;">
       <span aria-hidden="true" class="carousel-control-prev-icon"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#home-hero" type="button">
+    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#home-hero" type="button" style="opacity: 0;">
       <span aria-hidden="true" class="carousel-control-next-icon"></span>
       <span class="visually-hidden">Next</span>
     </button>

@@ -133,14 +133,25 @@
 	}
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
 	color: $brand-green-light;
 	font-family: 'Alfa Slab One', serif;
 	font-weight: normal;
+	line-height: 150%;
+	margin: 0 0 30px 0; 
+}
+
+h3, h4, h5, h6 {
+	color: $brand-green-light;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	line-height: 150%;
 	margin: 0 0 20px 0;
 }
 
 p {
+	font-size: 110%; 
+	line-height: 150%;
 	margin: 0 0 20px 0;
 }
 
@@ -148,7 +159,7 @@ p {
 .background-dark-green {
 	background-color: $brand-green-dark;
 	h1, h2, h3, h4, h5, h6, p {
-		color: white;
+		color: white; 
 	}
 }
 
@@ -167,4 +178,19 @@ p {
 	margin-bottom: 5px;
 	letter-spacing: 4px;
 	text-transform: uppercase;
+}
+
+.event-accordion-row {
+	.event-header { 
+		color: $brand-green-light;
+		font-weight: bold;
+		margin-bottom: 5px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+	.wysiwyg-wrapper {
+		border-top: 2px solid $nav-border;
+		margin-top: 20px;
+		padding-top: 20px;
+	}
 }

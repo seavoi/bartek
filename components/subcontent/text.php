@@ -1,12 +1,16 @@
 <?php 
   $text = get_sub_field('text'); 
   $text_section_button = get_sub_field('text_section_button'); 
-  $text_section_headline = get_sub_field('text_section_headline'); ?>
+  $text_section_headline = get_sub_field('text_section_headline'); 
+  $text_section_subheadline = get_sub_field('text_section_subheadline');  ?>
   
 <div class="container">
   <div class="col-12">
     <?php if($text_section_headline): ?>
-      <h3><?php echo $text_section_headline; ?></h3>
+      <h2><?php echo $text_section_headline; ?></h2>
+    <?php endif; ?>
+    <?php if($text_section_subheadline): ?>
+      <h3><?php echo $text_section_subheadline; ?></h3>
     <?php endif; ?>
     <?php if($text): ?>
       <div class="wysiwyg-wrapper">

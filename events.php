@@ -17,7 +17,11 @@
           <div class="container">
             <div class="row headline-row">
               <div class="col-12 text-left">
-                <h2 class="m-b-0">Twin™ Shoeing Clinic</h2>
+                <h2><?php echo esc_html(get_field('events_headline')); ?></h2>
+                <div class="wysiwyg-wrapper">
+                  <?php the_field('events_content'); ?>
+                  <div class="clear"></div>
+                </div>
               </div>
             </div>
             <?php echo facetwp_display('template','events_library'); ?>

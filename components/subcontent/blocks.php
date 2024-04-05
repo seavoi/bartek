@@ -27,9 +27,9 @@
       <div class="content-wrapper">
         <?php if($block_headline): ?>
           <?php if($block_headline_format == 'secondary'): ?>
-          <h4><?php echo $block_headline; ?></h4>
-          <?php else: ?>
           <h3><?php echo $block_headline; ?></h3>
+          <?php else: ?>
+          <h2><?php echo $block_headline; ?></h2>
           <?php endif; ?>
         <?php endif; ?>
         <?php if($block_content): ?>
