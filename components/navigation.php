@@ -25,7 +25,7 @@
 			  </g>
 			</svg>
   	</a>
-  	<button class="mobile-toggle" id="mobile-toggle-open" onclick="navMobileOpen(this)">
+  	<button class="mobile-toggle" id="mobile-toggle-open" onclick="navMobileOpen(this)" >
   		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
   	</button>
   	<button class="mobile-toggle none" id="mobile-toggle-close" onclick="navMobileClose(this)">
@@ -40,7 +40,7 @@
     	<li class="level-1 parent" <?php if ($url === $link['url']): ?> id="current"<?php endif; ?> onmouseenter="navLevel1Open(this)" onmouseleave	="navLevel1Close(this)">
     		<a class="link" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
 
-    		<button class="icon-wrapper" onclick="navMobileLevel1(this)">
+    		<button class="icon-wrapper" onclick="navMobileLevel1(this)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     			<svg class="icon mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
     			<svg class="icon desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
     		</button>
@@ -60,8 +60,6 @@
 					    			<svg class="icon mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
 					    			<svg class="icon desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
 					    		</button>
-					    		
-					    		
 
 					    		<?php if(have_rows('navigation_tertiary', 'option')): ?>
 				    				<ul class="level-3-wrapper">
@@ -101,7 +99,7 @@
 				  	<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path opacity="1" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
 				  </button>
 				</form>
-		  	<a class="button button-outline-primary" href="/shop">Buy Now</a>
+		  	<a class="button button-outline-primary" href="/buy">Buy Now</a>
 		  </div>
 
   	</ul>
