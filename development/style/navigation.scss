@@ -1,0 +1,462 @@
+.navbar-wrapper {
+	background-color: white; 
+	//box-shadow: $box-shadow;
+	display: flex;
+	height: 72px;
+	padding: 0 20px;
+	position: fixed;
+	transition: all .2s ease-in-out;
+	width: 100%;
+	z-index: 1000;
+	&:after {
+		background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 100%);
+		content: '';
+		display: block;
+		height: 5px;
+		position: absolute;
+		top: 72px;
+		right: 0;
+		left: 0;
+		width: 100%;
+		z-index: 10;
+	}
+	@media (min-width: $navigation) {
+		position: relative;
+	}
+	.mobile-toggle {
+		align-items: center;
+		background-color: transparent;
+		border: 2px solid $copy; 
+		border-radius: 4px;
+		display: flex;
+		height: 30px;
+		justify-content: center;
+		padding: 6px;
+		position: absolute;
+			top: 21px;
+			left: 21px;
+		width: 30px;
+		@media (min-width: $navigation) {
+			display: none;
+		}
+	}
+	.icon-wrapper {
+		align-items: center;
+		background-color: transparent;
+		border: 2px solid $copy; 
+		border-radius: 4px;
+		display: flex;
+		height: 30px;
+		justify-content: center;
+		padding: 6px;
+		position: absolute;
+			top: 0;
+			right: 0;
+		width: 30px;
+		@media (min-width: $navigation) {
+			border: none; 
+			height: 12px;
+			padding: 0;
+			position: absolute;
+				top: 30px;
+				right: 18px;
+			width: 12px;
+		}
+		svg {
+			fill: $copy;
+		}
+		.mobile {
+			display: block;
+			transition: transform .2s ease-in-out;
+			@media (min-width: $navigation) {
+				display: none;
+			}
+		}
+		.desktop {
+			display: none;
+			transition: all .2s ease-in-out;
+			@media (min-width: $navigation) {
+				display: block;
+			}
+		}
+		&.open-level-2 {
+			.mobile {
+				transform: rotate(45deg);
+			}
+			& ~ .level-2-wrapper {
+				display: flex;
+			}
+		}
+		&.open-level-3 {
+			.mobile {
+				transform: rotate(45deg);
+			}
+			& ~ .level-3-wrapper {
+				display: flex;
+			}
+		}
+	}
+	.link {
+		color: $copy;
+		display: inline-block;
+		font-size: 1.125em; 
+		font-weight: bold;
+		margin-right: auto;
+		padding: 0;
+		position: relative;
+		text-decoration: none;
+		transition: color .2s ease-in-out;
+		width: auto;
+		&:hover {
+			color: $brand-green-light;
+		}
+		@media (min-width: $navigation) {
+			font-size: 1em; 
+			padding: 9px 0 7px 0;
+		}
+	}
+	.level-1-wrapper {
+		background-color: $off-white;
+		display: none;
+		flex-direction: column;
+		height: calc(100vh - 72px);
+		margin: 0;
+		opacity: 1;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		padding: 20px;
+		position: absolute;
+			top: 72px;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		transition: opacity .2s ease-in-out .2s;
+		width: 100%;
+		z-index: 900;
+		&:after {
+			background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 100%);
+			content: '';
+			display: block;
+			height: 4px;
+			position: absolute;
+				right: 0;
+				top: 0;
+				left: 0;
+			width: 100%;
+		}
+		@media (min-width: $navigation) {
+			background-color: transparent;
+			display: flex;
+			flex-direction: row;
+			height: 72px;
+			margin: auto 0;
+			overflow: visible;
+			padding: 0 0 0 5px;
+			position: relative;
+				top: unset;
+				right: unset;
+				bottom: unset;
+				left: unset;
+			&:after {
+				display: none;
+			}
+		}
+	}
+	.level-1 {
+		border-bottom: 2px solid $nav-border;
+		display: flex;
+		flex-direction: column;
+		padding: 0 0 10px 0;
+		position: relative;
+		margin: 0 0 10px 0;
+		z-index: 902;
+		&:first-of-type {
+			@media (min-width: $navigation) {
+				display: none;
+			}
+			@media (min-width: $extra-large) {
+				display: flex;
+			}
+		}
+		&:last-of-type {
+			border-bottom: unset;
+		}
+		&.open-level-2 {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+		@media (min-width: $navigation) {
+			border-top: none;
+			border-bottom: none;
+			justify-content: center;
+			margin: 0;
+			padding: 0 20px 0 0;
+			position: relative;
+			&:last-of-type {
+				border-bottom: none;
+			}
+			&.open-level-2 {
+				.desktop {
+					fill: $brand-green-light;
+					transform: rotate(180deg);
+				}
+				& > .level-2-wrapper {
+					display: flex;
+				}
+			}
+		}
+		&.parent {
+			@media (min-width: $navigation) {
+				margin: 0;
+				padding: 0 36px 0 0;
+			}
+		}
+		&#current {
+			& > .link {
+				color: $brand-green-light;
+				@media (min-width: $navigation) {
+					border-bottom: 2px solid $brand-green-light;
+				}
+			}
+		}
+	}
+	.level-2-wrapper {
+		border: 2px solid $nav-border;
+		border-radius: 4px;
+		display: none;
+		flex-direction: column;
+		margin: 10px 0 0 0;
+		padding: 20px;
+		@media (min-width: $navigation) {
+			background-color: white;
+			border: none;
+			border-radius: 0 0 4px 4px;
+			//box-shadow: $box-shadow;
+			display: none;
+			flex-direction: column;
+			margin: 0;
+			padding: 20px;
+			position: absolute;
+				top: 72px;
+			width: 300px;
+			z-index: 950;
+			.icon-wrapper {
+				display: none;
+			}
+			&:after {
+				background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 100%);
+				content: '';
+				display: block;
+				height: 4px;
+				position: absolute;
+					right: 0;
+					top: 0;
+					left: 0;
+				width: 100%;
+			}
+		}
+	}
+	.level-2 {
+		border-bottom: 2px solid $nav-border;
+		display: flex;
+		flex-direction: column;
+		padding: 0 0 10px 0;
+		position: relative;
+		margin: 0 0 10px 0;
+		&:last-of-type {
+			border-bottom: unset;
+			margin: 0;
+			padding: 0;
+		}	
+		&.open-level-3 {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+	}
+	.level-3-wrapper {
+		border: 2px solid $nav-border;
+		border-radius: 4px;
+		display: none;
+		flex-direction: column;
+		margin: 10px 0 0 0;
+		padding: 20px;
+	}
+	.level-3 {
+		border-bottom: 2px solid $nav-border;
+		display: flex;
+		flex-direction: column;
+		padding: 0 0 10px 0;
+		position: relative;
+		margin: 0 0 10px 0;
+		&:last-of-type {
+			border-bottom: unset;
+			margin: 0;
+			padding: 0;
+		}	
+	}
+	.nav-right {
+		display: none;
+		@media (min-width: $navigation) {
+			display: flex;
+			flex-direction: row;
+			margin: auto 0 auto auto;
+		}
+		.nav-search-wrapper {
+			display: none;
+			@media (min-width: $extra-large) {
+				display: flex;
+			}
+		}
+	}
+}
+
+#wpadminbar {
+	position: fixed;
+}
+
+.admin {
+	.navbar-wrapper {
+		@media (min-width: $navigation) {
+		}
+		.icon-wrapper {
+		}
+		.level-1-wrapper {
+			height: calc(100vh - 72px - 46px);
+			@media (min-width: $navigation) {
+				height: 72px;
+			}
+		}
+		.level-1 {
+		}
+	}
+}
+
+.logo-wrapper {
+	display: block;
+	margin: auto;
+	width: auto;
+	@media (min-width: $navigation) {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		margin: 0 15px 0 0;
+	}
+	svg {
+		display: block;
+		height: 42px;
+		.cls-1 {
+      clip-path: url(#clippath);
+    }
+    .cls-2, .cls-3 {
+      fill: none;
+    }
+    .cls-2, .cls-4 {
+      stroke-width: 0px;
+    }
+    .cls-5 {
+      clip-path: url(#clippath-1);
+    }
+		.cls-3 {
+			stroke: $brand-green-light;
+      stroke-miterlimit: 10;
+      stroke-width: 8.44px;
+      transition: .2s ease-in-out stroke;
+		}
+		.cls-4 {
+      fill: $brand-green-light;
+      transition: .2s ease-in-out fill;
+    }
+	}
+	&:focus, &:hover {
+		@media (min-width: $navigation) {
+			svg {
+				display: block;
+				height: 42px;
+				.cls-3 {
+					stroke: $brand-green-dark;
+				}
+				.cls-4 {
+		      fill: $brand-green-dark;
+		    }
+			}
+		}
+	}
+}
+
+.dark {
+	@media (min-width: $navigation) {
+		.navbar-wrapper {
+			background-color: rgba(6,52,58,0.75);
+			.level-1-wrapper {
+				background-color: transparent;
+			}
+			.button-outline-primary {
+				background-color: transparent;
+				border: 2px solid white;
+				color: white;
+				&:hover {
+					background-color: transparent;
+					border: 2px solid $brand-green-light;
+					color: $brand-green-light;
+				}
+				&:focus {
+					border: 2px solid $brand-green-light;
+					box-shadow: 0px 0px 0px 4px $brand-green-bright;
+				}
+			}
+		}
+		.link {
+			color: white;
+			&:hover {
+				color: $brand-green-light;
+			}
+		}
+		.level-1 {
+				&.open-level-2 {
+					.desktop {
+						fill: white;
+					}
+				}
+			&#current {
+				& > .link {
+					color: white;
+					border-bottom: 2px solid white;
+				}
+			}
+		}
+		.icon-wrapper {
+			border: 2px solid transparent; 
+			svg {
+				fill: white;
+			}
+		}
+		.level-2 {
+			.link {
+				color: $copy;
+				&:hover {
+					color: $brand-green-light;
+				}
+			}
+		}
+		.logo-wrapper {
+		svg {
+			.cls-3 {
+				stroke: white;
+			}
+			.cls-4 {
+	      fill: white;
+	    }
+		}
+		&:focus, &:hover {
+				svg {
+					.cls-3 {
+						stroke: $brand-green-light;
+					}
+					.cls-4 {
+			      fill: $brand-green-light;
+			    }
+				}
+			}
+		}
+	}
+}

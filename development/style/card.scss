@@ -1,0 +1,61 @@
+.card {
+	border: none;
+	border-radius: 21px;
+	box-shadow: $box-shadow;
+	display: flex;
+	flex: 1;
+	height: 100%;
+	overflow: hidden;
+	.card-image-wrapper {
+		height: 0;
+	  padding-bottom: 56.25%; /* 16:9 */
+	  position: relative;
+	  .card-image {
+	    background-position: center;
+	  	background-size: cover;
+		  position: absolute;
+		  height: 100%;
+		  top: 0; 
+		  left: 0;
+		  width: 100%;
+		}
+		.card-image-na {
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+	.card-body {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+	}
+	.title {
+		color: $brand-green-light;
+		font-family: 'Alfa Slab One', serif;
+		font-size: calc(1rem + 0.3vw); 
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+	.wysiwyg-wrapper {
+		margin-bottom: 10px;
+	}
+	.button {
+		margin-top: auto;
+		width: 100%;
+	}
+}
+
+.card-row {
+	.col-xs-12 {
+		padding-bottom: 20px;
+		@media (min-width: $medium) {
+			padding-bottom: 0;
+		}
+		&:last-of-type {
+			padding-bottom: 0;
+			@media (min-width: $medium) {
+				padding-bottom: 0;
+			}
+		}
+	}
+}

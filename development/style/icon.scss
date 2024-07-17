@@ -1,0 +1,52 @@
+picture {
+	display: block;
+	height: auto;
+	max-width: 100%;
+	img {
+		display: block;
+    height: auto; 
+		max-width: 100%;
+		width: auto;
+	} 
+	&.alignright, &.alignleft {
+		display: inline-block;
+		height: auto;
+		max-width: 100%;
+		img {
+			display: inline-block;  
+		}
+	}
+	&.alignright {
+		float: right;
+	}
+	&.alignleft {
+		float: left;
+	}
+}
+
+.icon-wrapper {
+	align-items: center;
+	display: flex;
+	height: 200px;
+	justify-content: center;
+	margin: 0 auto 30px auto;
+	max-width: 100%;
+	&.circular {
+		background-color: $brand-green-light;
+		background-position: center;
+		background-size: cover;
+		border-radius: 100%;
+		max-width: 200px;
+	}
+	.icon {
+		max-height: 100%;
+	} 
+}
+
+.icon-row {
+	.title {
+		color: $brand-green-light;
+		font-weight: bold;
+		margin: 0 0 10px 0;
+	}
+}

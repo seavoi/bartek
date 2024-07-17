@@ -1,0 +1,136 @@
+/* .blocks {
+	& ~ .blocks {
+		.container {
+			padding-top: 0;
+			@media (min-width: $medium) {
+				padding-top: 0;
+			}
+			@media (min-width: $extra-large) {
+				padding-top: 0;
+			}
+		}
+	}
+} */
+
+// Primary Block
+.block-wrapper {
+	display: flex; 
+	flex-direction: column;
+	margin-left: -20px;
+	overflow: hidden;
+	width: calc(100% + 40px);
+	h4 {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: bold;
+	}
+	@media (min-width: $medium) {
+		flex-direction: row;
+		margin-left: 0;
+		width: 100%;
+		div:nth-child(1) {
+			div {
+				border-radius: 21px 0 0 21px;
+			}
+		}
+		div:nth-child(2) {
+			div {
+				border-radius: 0 21px 21px 0;
+			}
+		}
+	}
+	&.mobile-invert {
+		flex-direction: column-reverse;
+		@media (min-width: $medium) {
+			flex-direction: row-reverse;
+			div:nth-child(1) {
+				div {
+					border-radius: 0 21px 21px 0;
+				}
+			}
+			div:nth-child(2) {
+				div {
+					border-radius: 21px 0 0 21px;
+				}
+			}
+		}
+	}
+}
+
+.content-wrapper {
+	background-color: $off-white;
+	height: 100%;
+	padding: 30px 20px;
+	width: 100%;
+	@media (min-width: $medium) {
+		padding: 40px;
+	}
+	.button { 
+		margin-top: 20px;
+	}
+}
+
+.image-wrapper {
+	align-items: center;
+	background-color: $off-white; 
+	background-position: center;
+	background-repeat: none;
+	background-size: cover;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	padding-top: 56.25%; 
+	width: 100%;
+	@media (min-width: $medium) {
+		padding-top: 0;
+	}
+	.image {
+		border-radius: 12px !important;
+		margin: 20px;
+		max-height: 300px;
+		max-width: calc(100% - 40px);
+	}
+}
+
+.video-wrapper {
+	background-color: $off-white; 
+	height: 100%;
+	padding: 20px;
+	width: 100%;
+	& div {
+		border-radius: 12px !important;
+		margin: auto;
+		overflow: hidden;
+		position: relative;
+		top: 50%;
+    transform: translateY(-50%);
+		width: 100%;
+	}
+}
+
+.container.gray_default {
+	.content-wrapper, .image-wrapper, .video-wrapper {
+		background-color: $off-white;
+	}
+}
+
+.container.white {
+	.block-wrapper {
+		border-radius: 21px;
+		box-shadow: $box-shadow;
+	}
+	.content-wrapper, .image-wrapper, .video-wrapper {
+		background-color: white;
+	}
+}
+
+.container.white_no_space {
+	.content-wrapper, .image-wrapper, .video-wrapper {
+		background-color: white;
+	}
+	.content-wrapper {
+		padding: 0;
+		@media (min-width: $medium) {
+			padding: 0;
+		}
+	}
+}

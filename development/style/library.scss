@@ -1,0 +1,151 @@
+.facetwp-template {
+	@extend .row;
+	display: flex;
+	flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  & > * {
+  	max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: var(--bs-gutter-y);
+  }
+} 
+
+.filter-wrapper {
+  border-radius: 12px;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  z-index: 225;
+  input {
+    cursor: pointer;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 250;
+  }
+  .filter-title {
+    background-color: white;
+    border-radius: 12px 12px 0 0;
+    color: $copy;
+    font-weight: bold;
+    margin-bottom: 0;
+    min-height: 42px;
+    padding: 8px 12px;
+    position: relative;
+    transition: color .2s ease-in-out;
+  }
+  .icon {
+    align-items: center;
+    display: flex;
+    height: 18px;
+    justify-content: center;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: 18px;
+    svg {
+      fill: $copy;
+      transition: all .2s ease-in-out;
+    }
+  }
+  .filter {
+    background-color: $off-white;
+    border-top: 2px solid #EFEFEF;
+    border-radius: 0 0 12px 12px;
+    padding: 10px;
+    position: absolute;
+    top: 42px;
+    right: 0;
+    left: 0;
+    z-index: 250;
+  }
+  .facetwp-facet {
+    margin-bottom: 20px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  &:hover, &:focus {
+    .filter-title {
+      color: $brand-green-light;
+      border-radius: 12px 12px 0 0;
+    }
+    .icon {
+      svg {
+        fill: $brand-green-light;
+      }
+    }
+  }
+  &.open {
+    overflow: visible;
+    .filter-title {
+      color: $brand-green-light;
+      border-radius: 12px 12px 0 0;
+    }
+    .icon {
+      svg {
+        fill: $brand-green-light;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.facetwp-template > * {
+  padding-bottom: 24px;
+}
+
+.facetwp-dropdown {
+  background-color: white;
+  border: 2px solid $nav-border;
+  border-radius: 21px;
+  color: $copy;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.125em;
+  height: 42px;
+  //line-height: 18px;
+  max-width: 100%;
+  min-width: unset !important;
+  padding: 0 14px;
+  position: relative;
+  transition: all .2s ease-in-out;
+  width: 100%;
+  z-index: 100;
+  &:hover {
+    border: 2px solid $brand-green-light;
+  } 
+  &:focus {
+    border: 2px solid $brand-green-light;
+    box-shadow: 0px 0px 0px 4px $brand-green-bright;
+    outline: none;
+  }
+  &::placeholder {
+    color: $nav-border;
+    font-style: italic;
+  }
+}
+
+.facetwp-template {
+  .card {
+    .wysiwyg-wrapper {
+      p {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;    
+      }
+    }
+  }
+}

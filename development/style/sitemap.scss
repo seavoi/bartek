@@ -1,0 +1,125 @@
+.sidebar-navigation-wrapper {
+	display: none;
+	@media (min-width: $medium) {
+		border-right: 2px solid #EFEFEF;
+		display: block;
+		height: 100%;
+		overflow: hidden;
+		width: 100%;
+	}
+}
+
+.sitemap-wrapper {
+	display: none;
+	@media (min-width: $medium) {
+		display: flex;
+		flex-direction: column;
+		padding-right: 20px;
+		position: relative;
+	}
+	.sitemap {
+		display: none;
+		@media (min-width: $medium) {
+			align-self: start;  
+			border-right: 2px solid transparent;
+			display: flex;
+			flex-direction: column;
+			overflow: scroll;
+			position: absolute;
+			top: 0;
+			right: 20px;
+			left: 12px;
+			padding: 0 20px 0 0;
+			//width: 100%;
+		}
+		&.fixed {
+			position: a;
+			top: 20px;
+			left: 0;
+		}
+	}
+	.link {
+		color: $copy;
+		margin-right: auto;
+		padding: 0 24px 0 0;
+		position: relative;
+		text-decoration: none;
+		transition: color .2s ease-in-out;
+		width: 100%;
+		&:hover {
+			color: $brand-green-light;
+		}
+	}
+	.icon-wrapper {
+		align-items: center;
+		background-color: transparent;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		display: flex;
+		height: 22px;
+		justify-content: center;
+		padding: 4px;
+		position: absolute;
+			right: -5px;
+		margin: 0;
+		transition: all .2s ease-in-out;
+		width: 22px;
+		&:focus, &:hover {
+			border: 2px solid #EFEFEF;
+		}
+	}
+	.level-1-wrapper, .level-2-wrapper, .level-3-wrapper {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	.level-1, .level-2, .level-3 {
+    align-items: center;	
+		display: flex;
+		flex-direction: column;
+		margin: 0 0 10px 0;
+		padding: 0;
+		position: relative;
+		&.parent {
+			padding: 0;
+		}
+		&.active, &#active {
+			& > .link {
+				color: $brand-green-light;
+				font-weight: bold;
+				&:before {
+					background-color: $brand-green-light;
+					content: '';
+					display: block;
+					position: absolute;
+						top: 0;
+						right: -22px;
+						bottom: 0;
+					width: 2px;
+				}
+			}
+		}
+	}
+	.level-2-wrapper, .level-3-wrapper {
+		display: none;
+		padding: 0 0 0 20px;
+	}
+	.level-2, .level-3 {
+		margin: 10px 0 0 0;
+	}
+	.level-1.open {
+		.level-2-wrapper {
+			display: flex;
+		}
+	}
+	.level-2.open {
+		.level-3-wrapper {
+			display: flex;
+		}
+	}
+	.open > .icon-wrapper {
+		transform: rotate(180deg);
+	}
+}

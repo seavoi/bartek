@@ -1,0 +1,107 @@
+.billboard-wrapper {
+	background-color: $brand-green-light; 
+	position: relative;
+	@media (min-width: $medium) {
+		background-color: $off-white;
+	}
+	.billboard-content-wrapper {
+		position: relative;
+		z-index: 50;
+		@media (min-width: $medium) {
+			min-height: 400px; 
+		}
+		.billboard-content {
+			padding-right: 20px;
+			.wysiwyg-wrapper {
+				margin-bottom: 10px;
+			}
+			h1 {
+				color: white;
+				margin-bottom: 20px;
+				@media (min-width: $medium) {
+					color: $brand-green-light;
+				}
+			}
+			p, ul, li {
+				color: white;
+				margin-bottom: 0;
+				@media (min-width: $medium) {
+					color: $copy;
+					font-size: 1.25em;
+				}
+			}
+			p ~ a.button {
+				margin-top: 40px;
+			}
+			@media (min-width: $medium) {
+				padding-right: 30px;
+			}
+			@media (min-width: $medium) {
+				padding-right: 40px;
+			}
+		}
+	}
+	.billboard-background-wrapper {
+		display: flex;
+		flex-direction: row;
+		position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		z-index: 25;
+		.billboard-background {
+			height: 100%;
+			width: 100%;
+			@media (min-width: $medium) {
+				width: 50%;
+			}
+			&:first-of-type {
+				display: none;
+				@media (min-width: $medium) {
+					display: block;
+				}
+			}
+			&:last-of-type {
+				background-blend-mode: multiply;
+				background-color: $brand-green-light; 
+				background-position: center;
+				background-repeat: none;
+				background-size: cover;
+				position: relative;
+				&:after {
+					background-color: $brand-green-light;
+					content: '';
+					display: block;
+					opacity: .75;
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					@media (min-width: $medium) {
+						display: none;
+					}
+				}
+				@media (min-width: $medium) {
+					background-blend-mode: unset;
+				}
+			}
+		}
+	}
+}
+
+.mini-billboard-wrapper {
+	.billboard-content-wrapper {
+		min-height: unset;
+		text-align: center;
+	}
+}
+
+#scroll {
+	background-color: transparent;
+	height: 116px;
+	margin-top: -116px;
+	width: 100%;
+	z-index: 0;
+}

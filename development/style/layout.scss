@@ -1,0 +1,117 @@
+section {
+	position: relative;
+}
+
+.section-id {
+	position: absolute;
+	top: -92px;
+	@media (min-width: $medium) {
+		top: -136px;
+	}
+}
+
+.container {
+	max-width: 1500px;
+	padding: 50px 20px;
+	@media (min-width: $medium) {
+		padding: 60px 30px;
+	}
+	@media (min-width: $extra-large) {
+		padding: 70px 40px;
+	}
+	.container {
+		padding: 0;
+	}
+}
+
+.row {
+	padding-bottom: 20px;
+	@media (min-width: $medium) {
+		padding-bottom: 20px;
+	}
+	@media (min-width: $extra-large) {
+		padding-bottom: 30px;
+	}
+	&:last-of-type {
+		padding-bottom: 0;
+	}
+}
+
+.blocks, .text {
+	margin-bottom: 50px;
+	@media (min-width: $medium) {
+		margin-bottom: 60px;
+	}
+	@media (min-width: $extra-large) {
+		margin-bottom: 70px;
+	}
+}
+
+// Event Preview
+.event-accordion-row {
+	.accordion-body {
+		display: block;
+		@media (min-width: $medium) {
+			//display: flex;
+			//flex-direction: row;
+		}
+		.event-details {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			float: left;
+			width: calc(100% - 270px);
+		}
+		.flyer-wrapper {
+			float: left;
+			max-width: 250px;
+			width: 100%;
+			@media (min-width: $medium) {
+				margin: 0 0 0 20px;
+			}
+			.image {
+				border-radius: 12px;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.event-preview-image-wrapper {
+	border-top: 2px solid $nav-border;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding-top: 20px;
+	width: 100%;
+	ul {
+		display: block;
+		margin: 0 0 -10px 0;
+		padding: 0;
+		width: calc(100% + 10px);
+		li {
+			display: block;
+			float: left;
+			margin: 0;
+			padding-top: calc((1/3) * 100%);
+			position: relative;
+			width: calc((1/3) * 100%);
+			a {
+				background-color: $nav-border;
+				background-size: cover;
+				background-position: center;
+				border-radius: 12px;
+				overflow: hidden;
+	  		position: absolute;
+			  top: 0;
+			  right: 10px;
+			  bottom: 10px;
+			  left: 0;
+			  width: calc(100% - 10px);
+			}
+		}
+	}
+}
+
+.clear {
+	margin: 0 0 20px 0;
+}

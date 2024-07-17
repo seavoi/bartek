@@ -1,0 +1,1 @@
+<?php wp_mail( 'bloodthirstyhousecat@gmail.com', 'Newsletter Sign Up', 'Email: ' ); ?>
