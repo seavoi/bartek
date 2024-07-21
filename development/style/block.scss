@@ -85,9 +85,19 @@
 	}
 	.image {
 		border-radius: 12px !important;
+		display: flex;
 		margin: 20px;
-		max-height: 300px;
+		max-height: 275px;
 		max-width: calc(100% - 40px);
+		img {
+			border-radius: 12px;
+			display: block;
+	    height: auto;
+	    margin: auto;
+			max-height: 100%;
+			max-width: 100%;
+			width: auto;
+		} 
 	}
 }
 

@@ -16,7 +16,7 @@
 						  <?php 
 						    $parents =  implode( ',' , get_post_ancestors( $post));
 						    if ($post->post_parent){
-						      wp_list_pages('include='.$parents.'&title_li=&depth=-1' ); 
+						      wp_list_pages('include='.$parents.'&title_li=&depth=2' ); 
 						    }
 						  ?>
 						  <li><?= the_title() ?></li>
@@ -78,7 +78,7 @@
 						  <?php 
 						    $parents =  implode( ',' , get_post_ancestors( $post));
 						    if ($post->post_parent){
-						      wp_list_pages('include='.$parents.'&title_li=&depth=-1' ); 
+						      wp_list_pages('include='.$parents.'&title_li=&depth=2' ); 
 						    }
 						  ?>
 						  <li><?= the_title() ?></li>
