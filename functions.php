@@ -77,30 +77,3 @@ function defer_parsing_of_js( $url ) {
   return str_replace( ' src', ' defer src', $url );
 }
 add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
-
-/*
- * To add WooCommerce registration form custom fields.
- */
-
-function text_domain_woo_reg_form_fields() {
-    ?>
-    <p class="form-row">
-      <label for="BFPNumber"><?php _e('BFP Number', 'text_domain'); ?></label>
-      <input type="text" class="input-text" name="BFPNumber" id="BFPNumber" value="<?php if (!empty($_POST['BFPNumber'])) esc_attr_e($_POST['BFPNumber']); ?>" />
-    </p>
-    <?php
-}
-
-add_action('woocommerce_register_form_start', 'text_domain_woo_reg_form_fields');
-
-/*
- * To save WooCommerce registration form custom fields.
- */
-
-function text_domain_woo_save_reg_form_fields($customer_id) {
-    if (isset($_POST['billing_first_name'])) {
-        update_user_meta($customer_id, 'BFPNumber', sanitize_text_field($_POST['BFPNumber']));
-    }
-}
-
-add_action('woocommerce_created_customer', 'text_domain_woo_save_reg_form_fields');
