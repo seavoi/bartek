@@ -10,11 +10,11 @@
   $block_video = get_sub_field('block_video');  ?>
 
 <div class="container <?php echo $block_background; ?>">
-  <div class="block-wrapper <?php if($block_layout == 'right' || $block_layout == 'right_quarter'): ?>mobile-invert<?php endif; ?>">
+  <div class="block-wrapper <?php if($block_layout == 'right' || $block_layout == 'right_third' || $block_layout == 'right_quarter'): ?>mobile-invert<?php endif; ?>">
 
     <?php if($block_layout == 'right_quarter' || $block_layout == 'left_quarter'): ?>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-    <?php if($block_layout == 'right_third' || $block_layout == 'left_third'): ?>
+    <?php elseif($block_layout == 'right_third' || $block_layout == 'left_third'): ?>
     <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
     <?php else: ?>
     <div class="col-xs-12 col-sm-6">
@@ -36,7 +36,7 @@
     
     <?php if($block_layout == 'right_quarter' || $block_layout == 'left_quarter'): ?>
     <div class="col-xs-12 col-sm-6 col-md-8 col-lg-9">
-    <?php if($block_layout == 'right_third' || $block_layout == 'left_third'): ?>
+    <?php elseif($block_layout == 'right_third' || $block_layout == 'left_third'): ?>
     <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
     <?php else: ?>
     <div class="col-xs-12 col-sm-6">
